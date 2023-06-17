@@ -44,6 +44,9 @@ include('config.php');
     }
 if(isset($_GET['delete'])){
     $delete_id = $_GET['delete'];
+    $delete_image_query = mysqli_query($conn, "SELECT * FROM automobiles WHERE imma = '$delete_id'") or die(mysqli_error($conn));
+    $fetch_delete_image = mysqli_fetch_assoc($delete_image_query);
+    unlink("uploaded_img/".$fetch_delete_image['image']);
     mysqli_query($conn, "DELETE FROM automobiles WHERE imma = '$delete_id'") or die(mysqli_error($conn));
     header("Location:admin_products.php");
 }
@@ -54,7 +57,7 @@ if(isset($_POST['update_product'])){
     $update_prix = $_POST['update_prix'];
     $update_annee = $_POST['update_annee'];
     $update_km = $_POST['update_km'];
-    $update_image = $_FILES['update_image']['name'];
+    $update_image = $_FILES['update_old_image']['name'];
 
  mysqli_query($conn, "UPDATE automobiles SET imma = '$update_p_imma', prix = '$update_prix', annee = '$update_annee', km = '$update_km' WHERE imma = '$update_p_imma'") or die(mysqli_error($conn));
 
@@ -73,7 +76,7 @@ if(isset($_POST['update_product'])){
               unlink("uploaded_img/".$update_old_image);
         }
     }
-    
+
     header("Location:admin_products.php");
 
 }
