@@ -27,8 +27,6 @@ if(isset($_POST['submit'])){
 }
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="fr_FR">
 <head>
@@ -45,6 +43,24 @@ if(isset($_POST['submit'])){
 
    </head>
 <body>
+
+<?php
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
+
+
+
+
+
 <div class="form-container">
 
 <form action="" method="post">

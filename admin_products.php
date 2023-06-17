@@ -110,7 +110,7 @@ if(isset($_POST['update_product'])){
 <h1 class="title">Notre colection de voitures </h1>
 
     <form action="" method="post" enctype="multipart/form-data">
-        <h3>Ajouter ou modifier une voiture</h3>
+        <h3>Ajouter  un véhicule</h3>
 
         <input type="text"  name="imma" placeholder="L'immatriculation de la voiture" class="box" required>
         <input type="text"  name="marque" placeholder="La marque de la voiture" class="box" required>
@@ -189,10 +189,7 @@ if(isset($_POST['update_product'])){
 
 
  <!-- js dossier admin -->
-
-   <script src="Garage Parrot/js/admin_script.js">
-
-   </script>
+   <script src="Garage Parrot/js/admin_script.js"></script>
   
 
 

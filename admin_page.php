@@ -55,7 +55,7 @@ if(isset($_POST['submit'])){
       <div class="box">
       <?php 
       $total_pendings = 0;
-      $select_pending = mysqli_query($conn, "SELECT total_price FROM orders WHERE payement_status='pending'") or die(mysqli_error($conn));
+      $select_pending = mysqli_query($conn, "SELECT total_price FROM orders WHERE payment_status='pending'") or die(mysqli_error($conn));
 if(mysqli_num_rows($select_pending) > 0){
    while($row = mysqli_fetch_assoc($select_pending)){
       $total_price = $row['total_price'];
@@ -72,7 +72,7 @@ if(mysqli_num_rows($select_pending) > 0){
     <div class="box">
  <?php 
       $total_completed = 0;
-      $select_completed = mysqli_query($conn, "SELECT total_price FROM orders WHERE payement_status='completed'") or die(mysqli_error($conn));
+      $select_completed = mysqli_query($conn, "SELECT total_price FROM orders WHERE payment_status='completed'") or die(mysqli_error($conn));
 if(mysqli_num_rows($select_completed) > 0){
    while($row = mysqli_fetch_assoc($select_completed)){
       $total_price = $row['total_price'];
@@ -100,7 +100,7 @@ if(mysqli_num_rows($select_completed) > 0){
       $num_products = mysqli_num_rows($select_products);
       ?>
       <h3><?php echo $num_products; ?></h3>
-      <p>Produits ajoutés</p>
+      <p>Véhicule ajoutés</p>
 </div>
 
 <div class="box">
