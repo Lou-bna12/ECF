@@ -54,12 +54,10 @@ if(isset($_GET['delete'])){
 
 <?php
 $select_orders = mysqli_query($conn, "SELECT * FROM orders ") or die(mysqli_error($conn));
- 
-if(mysqli_num_rows($select_orders) > 0){
+ if(mysqli_num_rows($select_orders) > 0){
         while($fetch_orders = mysqli_fetch_assoc($select_orders)){
  ?>
 <div class="box">
-  
   <p> Utilisateur id : <span><?php echo $fetch_orders['user_id']; ?></span> </p>
   <p> date de réservation : <span><?php echo $fetch_orders['placed_on']; ?></span></p>
   <p> Nom et prénom : <span><?php echo $fetch_orders['name']; ?></span></p>
@@ -69,9 +67,9 @@ if(mysqli_num_rows($select_orders) > 0){
   <p> Total de commandes : <span><?php echo $fetch_orders['total_products']; ?></span></p>
   <p> prix total : <span><?php echo $fetch_orders['total_price']; ?></span>/-</p>
   <p> Paiement : <span><?php echo $fetch_orders['method']; ?></span></p>
-<form action="" method="post">
-    <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
-    <select name="update_payment">
+  <form action="" method="post">
+     <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
+     <select name="update_payment">
         <option value="" selected disabled><?php echo $fetch_orders['payment_status']; ?></option>
         <option value="pendding">En attente</option>
         <option value="completed">Terminé</option>

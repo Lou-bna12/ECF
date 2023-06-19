@@ -19,9 +19,32 @@ include('config.php');
 </head>
 <body>
 
-
-
 <?php include('admin_header.php'); ?>
+
+<section class="users">
+
+   <div class="box-container">
+    <?php
+        $select_users = mysqli_query($conn, "SELECT * FROM users") or die('query failed');
+        while($fetch_users = mysqli_fetch_assoc($select_users)){
+    ?>  
+        <div class="box">
+          <p> Nom : <span><?php echo $fetch_users['name']; ?></span> </p>
+          <p> Adresse email : <span><?php echo $fetch_users['email']; ?></span> </p>
+          <p>Le type d'utilisateur : <span><?php echo $fetch_users['user_type']; ?></span> </p>
+          <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('Supprimer cette commande?');"
+     class="delete-btn">Supprimer</a>
+    </div>
+    <?php
+    
+       };
+    
+    ?>
+
+
+
+
+
 
 
  <!-- js dossier admin -->
