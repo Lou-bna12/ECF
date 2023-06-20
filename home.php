@@ -63,6 +63,11 @@ if(isset($_POST['add_to_cart'])){
 </section>
 
 <section class="products">
+
+
+<h1 class="title">La liste des véhicules les plus récents</h1>
+
+
  <div class="box-container">
 
  <?php
@@ -99,6 +104,38 @@ if(isset($_POST['add_to_cart'])){
  </div>
 </section>
 
+<section class="about">
+
+   <div class="flex">
+
+      <div class="image">
+         <img src="Garage Parrot/images/about-img.jpg" alt="">
+</div>
+
+<div class="content">
+   <h3>À propos de nous</h3>
+   <p>
+   Installée depuis 2003 à Nantes, l’équipe du Garage Parrot vous accueille et vous conseille.
+ </p>
+ <a href="about.php" class="btn">Lire la suite</a>
+</div>
+
+  </div>
+
+</div>
+
+</section>
+
+<section class="home-contact">
+
+<div class="content">
+   <h3>Avez-vous des questions ?</3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <a href="contact.php" class="white-btn">Contacter-nous</a>
+</div>
+
+
+</section>
 
 
 
