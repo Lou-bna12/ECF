@@ -129,6 +129,18 @@ section{
 }
 
 .white-btn:hover{
+   background-color: #f5f5f5;
+   color: #262526;
+}
+
+@keyframes fadeIn {
+   0%{
+      transform: translateY(1rem);
+      opacity: .2s;
+   }
+}
+
+.white-btn:hover{
    background-color: var(--white);
    color:var(--black);
 }
@@ -163,13 +175,6 @@ section{
 
 .heading p a:hover{
    text-decoration: underline;
-}
-
-@keyframes fadeIn {
-   0%{
-      transform: translateY(1rem);
-      opacity: .2s;
-   }
 }
 
 .form-container{
@@ -341,6 +346,21 @@ section{
 
 .header .header-2 .flex .user-box .delete-btn{
    margin-top: 0;
+}
+
+.home{
+   min-height: 60vh;
+   background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),  url(../images/home-bg.jpg) no-repeat;
+   background-size: cover;
+   background-position: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.home .content{
+   text-align: center;
+   
 }
 
 
