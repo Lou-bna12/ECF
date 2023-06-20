@@ -22,6 +22,7 @@
             <p><i class="fas fa-phone"></i>+123-456-789</p>
             <p><i class="fas fa-phone"></i>+123-789-101</p>
             <p><i class="fas fa-envelope"></i> garage-parrot@gmail.com </p>
+            <p><i class="fa-solid fa-clock"></i>Lun - Ven: 8:45-12:00, 14:00-18:00<br> Sam: 8:45-12:00<br> Dim: Fermé </p>
             <p><i class="fas fa-map-marker-alt"></i> Nantes, France - 44000 </p>
 
         </div>
