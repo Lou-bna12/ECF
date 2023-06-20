@@ -20,12 +20,32 @@ if(isset($_POST['submit'])){
       }else{
          $_SESSION['name'] = $row['name'];
          header("Location: home.php");
+
       }
    }else{
       echo "<script>alert('Woops! Email ou mot de passe incorrect.')</script>";
    }
+  
 }
 
+if(isset($_POST['submit'])){
+   $email = $_POST['email'];
+   $password = $_POST['password'];
+
+$sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+$result = mysqli_query($conn, $sql);
+if(mysqli_num_rows($result) > 0){
+   $row = mysqli_fetch_assoc($result);
+   if($row['user_type'] == 'user'){
+      $_SESSION['name'] = $row['name'];
+      $_SESSION['email'] = $row['email'];
+      header("Location:home.php");
+   }else{
+      $_SESSION['name'] = $row['name'];
+
+   }
+}
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr_FR">

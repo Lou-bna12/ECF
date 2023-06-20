@@ -29,14 +29,26 @@ if(!isset($user_id)){
 </head>
 <body>
 
-<?php include ('header.php'); ?>
+<?php include('header.php'); ?>
    
+<section class="home">
+   <div class="content">
+<h3></h3>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<a href="about.php"></a>
+   </div>
+</section>
 
 
 
 
 
 
+
+
+<?php include('footer.php')?>
 
 
 
