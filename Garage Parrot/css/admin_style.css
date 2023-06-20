@@ -133,8 +133,8 @@ section{
 }
 
 .white-btn:hover{
-   background-color: var(--white);
-   color:var(--black);
+   background-color: #f5f5f5;
+   color: #262526;
 }
 
 @keyframes fadeIn {

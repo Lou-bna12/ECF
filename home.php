@@ -33,13 +33,16 @@ if(!isset($user_id)){
    
 <section class="home">
    <div class="content">
-<h3></h3>
+<h3>Véhicules</h3>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-<a href="about.php"></a>
+<a href="about.php" class="white-btn">En savoir plus</a>
    </div>
 </section>
+
+
+
 
 
 
