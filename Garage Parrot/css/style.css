@@ -746,6 +746,30 @@ section{
    user-select: none;
 }
 
+.display-order{
+   max-width: 1200px;
+   margin: 0 auto;
+   text-align: center;
+   padding-bottom: 0;
+}
+
+.display-order p{
+   background-color: var(--light-bg);
+   color: #262526;
+   font-size: 2rem;
+   padding: 1.5rem 1.5rem;
+   border: var(--border);
+   display: inline-block;
+   margin: .5rem;
+}
+
+.display-order p span{
+   color: #D94350;
+   font-weight: bold;
+}
+
+
+
 
 
 

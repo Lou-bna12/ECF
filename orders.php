@@ -31,7 +31,11 @@ if(!isset($user_id)){
 
 <?php include('header.php'); ?>
    
+<div class="heading">
 
+   <h3>Panier</h3>
+   <p><a href="home.php">Accueil</a> / Commandes </p>
+</div>
 
 
 
