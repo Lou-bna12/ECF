@@ -11,6 +11,7 @@ if(!isset($user_id)){
 }
 
 
+
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +49,7 @@ if(!isset($user_id)){
 <div class="content">
    <h3>Pourquoi avons-nous choisi ?</h3>
    <p>
-   Installée depuis 2003 à Nantes, à Nantes (44000), le garage V.Parrot vous accueille et vous conseille pour l'entretien et la réparation de votre véhicule.<br>
+   Installée depuis 2003 à Nantes, (44000), le garage V.Parrot vous accueille et vous conseille pour l'entretien et la réparation de votre véhicule.<br>
    Parce que le client est au centre de nos préoccupations, nous sommes très attentif à la qualité de nos prestations et services que l'on apporte à votre automobiles.<br>
    Mr Parrot et toute son équipe portent les couleurs du réseau AD Expert.<br>
    c'est aujourd'hui le premier réseau européen de réparateurs indépendants multimarques.<br>

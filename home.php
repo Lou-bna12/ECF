@@ -102,6 +102,14 @@ if(isset($_POST['add_to_cart'])){
 ?>
 
  </div>
+
+<div class="load-more" style="margin-top: 2rem; text-align:center">
+<a href="shop.php" class="option-btn">Charger plus</a>
+</div>
+
+
+
+
 </section>
 
 <section class="about">
@@ -115,7 +123,7 @@ if(isset($_POST['add_to_cart'])){
 <div class="content">
    <h3>À propos de nous</h3>
    <p>
-   Installée depuis 2003 à Nantes, l’équipe du Garage Parrot vous accueille et vous conseille.
+   Installer depuis 2003 à Nantes, l’équipe du Garage Parrot vous accueille et vous conseille.
  </p>
  <a href="about.php" class="btn">Lire la suite</a>
 </div>
