@@ -57,6 +57,8 @@ if(isset($_POST['submit'])){
    </head>
 <body>
 
+<?php include('header.php'); ?>
+
 <?php
 if(isset($message)){
    foreach($message as $message){
@@ -87,5 +89,6 @@ if(isset($message)){
 </form>
 
 </div>
+<?php include('footer.php')?>
 </body>
 </html>

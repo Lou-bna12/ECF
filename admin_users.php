@@ -63,7 +63,7 @@ if(isset($_GET['delete'])){
 
 
 
-
+<?php include('footer.php')?>
 
 
  <!-- js dossier admin -->

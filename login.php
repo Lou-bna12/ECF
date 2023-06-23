@@ -92,5 +92,9 @@ if(isset($message)){
 </form>
 
 </div>
+
+
+<?php include('footer.php')?>
+
 </body>
 </html>

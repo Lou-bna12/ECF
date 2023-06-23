@@ -89,8 +89,7 @@ if(isset($_POST['add_to_cart'])){
 <input type="hidden" name="product_km" value="<?php echo $fetch_products['km']; ?>">
 <input type="hidden" name="product_annee" value="<?php echo $fetch_products['annee']; ?>">
 <input type="submit" value="Ajouter au panier" name="add_to_cart" class="btn">
-
-         </form>
+</form>
 
 <?php
 
