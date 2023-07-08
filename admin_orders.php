@@ -14,7 +14,7 @@ if(isset($_POST['update_order'])){
 
    $order_update_id = $_POST['order_id'];
    $update_payment = $_POST['update_payment'];
-   mysqli_query($conn, "UPDATE `orders` SET payment_status = '$update_payment' WHERE id = '$order_update_id'") or die('query failed');
+   mysqli_query($conn, "UPDATE `orders` SET payment_status = '$update_payment' WHERE user_id = '$order_update_id'") or die('query failed');
    $message[] = "Statut de paiement mis à jour avec succès!";
 
 }
@@ -71,8 +71,8 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders ") or die(mysqli_erro
      <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
      <select name="update_payment">
         <option value="" selected disabled><?php echo $fetch_orders['payment_status']; ?></option>
-        <option value="pendding">En attente</option>
-        <option value="completed">Terminé</option>
+        <option value="En attente">En attente</option>
+        <option value="Terminer">Terminé</option>
     </select>
     <input type="submit" value="Mettre à jour" name="update_order" class="option-btn">
     <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('Supprimer cette commande?');"
