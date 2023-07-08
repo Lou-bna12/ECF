@@ -11,7 +11,7 @@ include('config.php');
     };
     if(isset($_GET['delete'])){
       $delete_id = $_GET['delete'];
-      mysqli_query($conn, "DELETE FROM `messages` WHERE id = '$delete_id'") or die('query failed');
+      mysqli_query($conn, "DELETE FROM `message` WHERE id = '$delete_id'") or die('query failed');
       header('location:admin_contacts.php');
    }
 
@@ -40,7 +40,7 @@ include('config.php');
    <h1 class="title"> messages<h1>
    <div class="box-container">
    <?php
-      $select_message = mysqli_query($conn, "SELECT * FROM `messages`") or die('query failed');
+      $select_message = mysqli_query($conn, "SELECT * FROM `message`") or die('query failed');
       if(mysqli_num_rows($select_message) > 0){
          while($fetch_message = mysqli_fetch_assoc($select_message)){
       

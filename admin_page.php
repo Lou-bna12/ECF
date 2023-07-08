@@ -132,10 +132,10 @@ if(mysqli_num_rows($select_completed) > 0){
 
       <div class="box">
       <?php
-      $select_messages = mysqli_query($conn, "SELECT * FROM messages") or die(mysqli_error($conn));
-      $num_messages = mysqli_num_rows($select_messages);
+      $select_message = mysqli_query($conn, "SELECT * FROM message") or die(mysqli_error($conn));
+      $num_message = mysqli_num_rows($select_message);
       ?>
-      <h3><?php echo $num_messages; ?></h3>
+      <h3><?php echo $num_message; ?></h3>
       <p>Nouveaux messages</p>
   </div>
 
