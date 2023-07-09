@@ -4,15 +4,14 @@
 
 ## Description du projet : 
 
-Vincent Perrot, à ouvert son propore garage, il propose ses services a ses clients  : 
-- Réparation de la carrosserie. 
-* Mécanique des voitures. 
-+ Entretient régulier pour garentir la performance et la sécurité des voitures. 
-+ Vente des véhicules d'occasion.  
- 
-Vincent Parrot considère son garage comme un véritable lieu de confiance pour ses clients et 
-leurs voitures doivent, selon lui, à tout prix être entre de bonnes mains.
-Il a donc décider de contacter une agence pour lui créér un site web pour son garage. 
+Vincent Parrot, a ouvert son propre garage, il propose ses services à ses clients :
+
+- Réparation de la carrosserie.
+* Mécanique des voitures.
+* Entretien régulier pour garantir la performance et la sécurité des voitures.
+* Vente des véhicules d'occasion.
+  
+Vincent Parrot pense que son garage est un endroit où ses clients peuvent se sentir confiants et qu'ils doivent être entre de bonnes mains. Il a donc pris la décision de contacter une agence afin de lui créer un site web pour son garage.
 
 ### Fonctionnalités désirées par Vincent Perrot: 
 De créer un compte administrateur sera créé pour le chef d'entreprise du garage, et un autre compte pour ses employés.
@@ -25,9 +24,10 @@ De créer un compte administrateur sera créé pour le chef d'entreprise du gara
       + kilométrage 
   
 - Filtrer la liste des voitures d'occasion 
-* Premettre de contacte l'atelier (Un formulaire qui contient le nom, prénom, adresse e-mail, et numéro de téléphone)
+* Permettre de contacter l'atelier (un formulaire qui contient le nom, prénom, adresse e-mail, et numéro de téléphone)
 
-Et en dernier recueillir les témoignages des clients. 
+Et en dernier recueillir les témoignages des clients.
+
 
 # Les prérequis : 
 - HTML, CSS, et JS . 
