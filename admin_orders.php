@@ -68,14 +68,14 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders ") or die(mysqli_erro
   <p> prix total : <span><?php echo $fetch_orders['total_price']; ?></span>/-</p>
   <p> Paiement : <span><?php echo $fetch_orders['method']; ?></span></p>
   <form action="" method="post">
-     <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
+     <input type="hidden" name="order_id" value=""<?php echo $fetch_orders['user_id'];?>>
      <select name="update_payment">
         <option value="" selected disabled><?php echo $fetch_orders['payment_status']; ?></option>
         <option value="En attente">En attente</option>
         <option value="Terminer">Terminé</option>
     </select>
     <input type="submit" value="Mettre à jour" name="update_order" class="option-btn">
-    <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('Supprimer cette commande?');"
+    <a href="admin_orders.php?delete=<?php echo $fetch_orders['user_id']; ?>" onclick="return confirm('Supprimer cette commande?');"
      class="delete-btn">Supprimer</a>
     </form>
    </div>
