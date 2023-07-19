@@ -58,8 +58,8 @@ Pour lancer le projet :
 - CSS3
 - PHP 8.2 
 - MySQL
-- FillZila
-- IONOS
+- InfinityFree
+ 
 
 ## Auteur : 
 * **LOUBNA SELLAM** https://github.com/Lou-bna12/Projet.git
