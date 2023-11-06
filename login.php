@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
    $email = $_POST['email'];
    $password = $_POST['password'];
 
-   $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+   $sql = "SELECT * FROM `users` WHERE email= '$email' AND password='$password'";
    $result = mysqli_query($conn, $sql);
    if(mysqli_num_rows($result) > 0){
       $row = mysqli_fetch_assoc($result);
@@ -25,14 +25,14 @@ if(isset($_POST['submit'])){
    }else{
       echo "<script>alert('Woops! Email ou mot de passe incorrect.')</script>";
    }
-  
+
 }
 
 if(isset($_POST['submit'])){
    $email = $_POST['email'];
    $password = $_POST['password'];
 
-$sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+$sql = "SELECT * FROM `users` WHERE email='$email' AND password='$password'";
 $result = mysqli_query($conn, $sql);
 if(mysqli_num_rows($result) > 0){
    $row = mysqli_fetch_assoc($result);
@@ -87,7 +87,7 @@ if(isset($message)){
    <h3>Connectez-vous</h3>
    <input type="email" name="email" placeholder="Entrer votre email " required class="box">
    <input type="password" name="password" placeholder="Entrer votre mot de passe" required class="box">
-    <input type="submit" name="submit" value="Connexion" class="btn">
+   <input type="submit" name="submit" value="Connexion" class="btn">
    <p>Vous n'avez pas de compte? <a href="register.php"> Inscrivez-vous</a></p>
 </form>
 

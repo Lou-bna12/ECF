@@ -39,12 +39,12 @@ include('config.php');
             }
         }else{
             $message[] = "Erreur lors de l'ajout du véhicule";
-      }
-     }
+    }
+    }
     }
 if(isset($_GET['delete'])){
     $delete_id = $_GET['delete'];
-    $delete_image_query = mysqli_query($conn, "SELECT * FROM automobiles WHERE imma = '$delete_id'") or die(mysqli_error($conn));
+    $delete_image_query = mysqli_query($conn, "SELECT * FROM `automobiles` WHERE imma = '$delete_id'") or die(mysqli_error($conn));
     $fetch_delete_image = mysqli_fetch_assoc($delete_image_query);
     unlink("uploaded_img/".$fetch_delete_image['image']);
     mysqli_query($conn, "DELETE FROM automobiles WHERE imma = '$delete_id'") or die(mysqli_error($conn));
@@ -59,7 +59,7 @@ if(isset($_POST['update_product'])){
     $update_km = $_POST['update_km'];
     $update_image = $_FILES['update_old_image']['name'];
 
- mysqli_query($conn, "UPDATE automobiles SET imma = '$update_p_imma', prix = '$update_prix', annee = '$update_annee', km = '$update_km' WHERE imma = '$update_p_imma'") or die(mysqli_error($conn));
+ mysqli_query($conn, "UPDATE `automobiles` SET imma = '$update_p_imma', prix = '$update_prix', annee = '$update_annee', km = '$update_km' WHERE imma = '$update_p_imma'") or die(mysqli_error($conn));
 
     $update_image = $_FILES['update_image']['name'];
     $update_image_tmp_name = $_FILES['update_image']['tmp_name'];
@@ -71,7 +71,7 @@ if(isset($_POST['update_product'])){
         if($update_image_size > 2000000){
             $message[] = "La taille de l'image est trop grande";
         }else{
-           mysqli_query($conn, "UPDATE automobiles SET image = '$update_image' WHERE imma = '$update_p_imma'") or die(mysqli_error($conn));
+           mysqli_query($conn, "UPDATE `automobiles` SET image = '$update_image' WHERE imma = '$update_p_imma'") or die(mysqli_error($conn));
            move_uploaded_file($update_image_tmp_name, $update_folder);
               unlink("uploaded_img/".$update_old_image);
         }
@@ -161,7 +161,7 @@ if(isset($_POST['update_product'])){
     <?php
         if(isset($_GET['update'])){
          $update_id = $_GET['update'];
-         $update_query = mysqli_query($conn, "SELECT * FROM automobiles WHERE imma = '$update_id'") or die(mysqli_error($conn));
+         $update_query = mysqli_query($conn, "SELECT * FROM `automobiles` WHERE imma = '$update_id'") or die(mysqli_error($conn));
             if(mysqli_num_rows($update_query) > 0){
                 while($fetch_update = mysqli_fetch_assoc($update_query)){
     ?>
@@ -178,13 +178,13 @@ if(isset($_POST['update_product'])){
         <input type="reset" value="Annuler"   id="close-update" class="delete-btn">
     </form> 
         <?php
-          }
+        }
         }
         }else{
             echo '<script>document.querySelector(".edit-product-form").style.display = "none";</script>';
         } 
         ?>   
-              
+
 </section>
 
 

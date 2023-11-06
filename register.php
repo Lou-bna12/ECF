@@ -10,10 +10,10 @@ if(isset($_POST['submit'])){
    $user_type = $_POST['user_type'];
 
    if($password == $cpassword){
-      $sql = "SELECT * FROM users WHERE email='$email'";
+      $sql = "SELECT * FROM `users` WHERE email='$email'";
       $result = mysqli_query($conn, $sql);
       if(!$result->num_rows > 0){
-         $sql = "INSERT INTO users (name, email, password, user_type)
+         $sql = "INSERT INTO `users` (name, email, password, user_type)
          VALUES ('$name', '$email', '$password', '$user_type')";
          $result = mysqli_query($conn, $sql);
          if($result){
@@ -81,8 +81,8 @@ if(isset($message)){
    <input type="password" name="password" placeholder="Entrer votre mot de passe" required class="box">
    <input type="password" name="cpassword" placeholder="confirmer votre mot de passe" required class="box">
    <select name="user_type" class="box">
-      <option value="user">Employé</option>
-      <option value="admin">Admin</option>
+      <option value="Employé">Employé</option>
+      <option value="Admin">Admin</option>
    </select>
    <input type="submit" name="submit" value="Connexion" class="btn">
    <p>Vous avez déja un compte?<a href="login.php"> Connectez-vous</a></p>
