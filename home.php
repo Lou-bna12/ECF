@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['prix'], $_POST['km'],
       'annee' => $_POST['annee']
    );
 }
-// Utilisez les valeurs des filtres stockées dans la session
+//  les valeurs des filtres stockées dans la session
 $prix = isset($_SESSION['filters']['prix']) ? $_SESSION['filters']['prix'] : '';
 $km = isset($_SESSION['filters']['km']) ? $_SESSION['filters']['km'] : '';
 $annee = isset($_SESSION['filters']['annee']) ? $_SESSION['filters']['annee'] : '';

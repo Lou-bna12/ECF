@@ -15,7 +15,7 @@ $(document).ready(function () {
       type: 'POST',
       url: 'resultats.php',
       data: data,
-      dataType: 'html', // Ajoutez cette ligne
+      dataType: 'html',
       success: function (response) {
         $('.resultats-container').html(response);
       },

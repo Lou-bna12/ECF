@@ -1,7 +1,7 @@
 <?php
 include('config.php');
 
-// Assurez-vous que la connexion à la base de données est établie
+// Assurrant nous que la connexion à la base de données est établie
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
@@ -26,11 +26,11 @@ if ($annee !== null) {
 
 $result = mysqli_query($conn, $query);
 
-// Vérifiez si la requête a réussi
+// Vérification si la requête a réussi
 if ($result) {
     if (mysqli_num_rows($result) > 0) {
        while ($row = mysqli_fetch_assoc($result)) {
-          // Affichez vos résultats ici
+          // Affichez les résultats ici
           echo '<div>' . $row['marque'] . ' - Prix: ' . $row['prix'] . ' - Kilomètres: ' . $row['km'] . ' - Année: ' . $row['annee'] . '</div>';
        }
     } else {

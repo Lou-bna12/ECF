@@ -51,7 +51,7 @@ $(document).ready(function () {
       'resultats.php',
       { prix: prix, km: km, annee: annee },
       function (data) {
-        // Mettez à jour la section des résultats filtrés avec les nouveaux résultats
+        // Mettre à jour la section des résultats filtrés avec les nouveaux résultats
         $('.resultats-container').html(data);
       }
     );
