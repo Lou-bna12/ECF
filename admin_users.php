@@ -3,7 +3,7 @@ include('config.php');
 
 session_start();
 
-$admin_id = $_SESSION['name'];
+$admin_id = $_SESSION['admin_id'];
 
 if(!isset($admin_id)){
 header('location:login.php');
@@ -11,7 +11,8 @@ header('location:login.php');
 
 if(isset($_GET['delete'])){
 $delete_id = $_GET['delete'];
-mysqli_query($conn, "DELETE FROM `users` WHERE id = '$delete_id'") or die(mysqli_error($conn));
+mysqli_query($conn, "DELETE FROM `users` WHERE id = '$delete_id'") 
+or die('query failed');
    header("Location:admin_users.php");
 }
 
@@ -24,12 +25,16 @@ mysqli_query($conn, "DELETE FROM `users` WHERE id = '$delete_id'") or die(mysqli
    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
    <title>Utilisateurs </title>
-   <!-- font awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+      <!--JQuery-->
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+      <!-- font awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
       <!--  css dossier admin -->
 
-      <link rel="stylesheet" href="Garage Parrot/css/admin_style.css">
+   <link rel="stylesheet" href="Garage Parrot/css/admin_style.css">
 
 
 </head>

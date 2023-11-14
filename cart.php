@@ -4,10 +4,10 @@ include ('config.php');
 
 session_start();
 
-$user_id = $_SESSION['name'];
+$user_id = $_SESSION['user_id'];
 
 if(!isset($user_id)){
-  header('location:login.php');
+header('location:login.php');
 }
 
 if(isset($_POST['update_cart'])){
@@ -38,10 +38,13 @@ if(isset($_GET['delete_all'])){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Panier</title>
 
+      <!--JQuery-->
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
       <!-- font awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
    
-   <!--  css dossier admin -->
+      <!--  css dossier admin -->
 
    <link rel="stylesheet" href="Garage Parrot/css/style.css">
 </head>
@@ -62,28 +65,30 @@ if(isset($_GET['delete_all'])){
    <div class="box-container">
       <?php
       $grand_total = 0;
-      $select_cart = mysqli_query($conn, "SELECT * FROM cart WHERE user_id = '$user_id'") or die('query failed');
+      $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
       if(mysqli_num_rows($select_cart) > 0){
          while($fetch_cart = mysqli_fetch_assoc($select_cart)){
    ?>
 <div class="box">
-   <a href="cart.php?delete=<?php echo $fetch_cart['id']; ?>" class="fas fa-times" onclick="return confirm('Supprimer ce produit du panier ?');"></a>
-   <img src="uploaded_img/<?php echo $fetch_cart['image'] ;?>" alt="">
+   <a href="cart.php?delete=<?php echo $fetch_cart['id']; ?>" class="fas fa-times"
+   onclick="return confirm('Supprimer ce produit du panier ?');"></a>
+
+   <img  src="uploaded_img/<?php echo $fetch_cart['image']  ?>" alt="">
    <div class="marque"><?php echo $fetch_cart['marque']; ?></div>
    <div class="prix"><?php echo $fetch_cart['prix']; ?> €</div>
    <div class="annee"><?php echo $fetch_cart['annee']; ?></div>
    <div class="km"><?php echo $fetch_cart['km']; ?> km</div>
+
    <form action="" method="post">
       <input type="hidden" name="cart_id" value="<?php echo $fetch_cart['id']; ?>">
-      <input type="number" min="1" name="cart_quantity" value="<?php echo $fetch_cart['quantity']; ?>">
+      <input type="number" min="1" max="200" name="cart_quantity" value="<?php echo $fetch_cart['quantity']; ?>">
       <input type="submit" name="update_cart" value="Modifier" class="delete-btn"> 
          </form>
-         <div class="sub-total">Sous-total de :<span><?php echo $sub_total = ($fetch_cart['quantity'] * $fetch_cart['prix']); ?> €</span></div>
-
-         </div>
+         <div class="sub-total"> Sous-total de :<span><?php echo $sub_total = ($fetch_cart['quantity'] * $fetch_cart['prix']); ?> €</span></div>
+      </div>
    <?php
    $grand_total += $sub_total;
-   }
+}
 }else{
    echo '<p class="empty">Votre panier est vide</p>';
 }
@@ -92,7 +97,7 @@ if(isset($_GET['delete_all'])){
 
 <div style="margin-top: 2rem; text-align:center;">
    <a href="cart.php?delete_all" class="delete-btn <?php echo ($grand_total > 1)?'':'disabled'; ?>"
-    onclick="return confirm('Supprimer tous les articles du panier ?');">Supprimer tous</a>
+   onclick="return confirm('Supprimer tous les articles du panier ?');">Supprimer tous</a>
    </div>
 
    <div class="cart-total">
@@ -103,24 +108,12 @@ if(isset($_GET['delete_all'])){
       </div>
    </div>
 
-
 </section>
-
-
-
-
-
-
-
 
 <?php include('footer.php')?>
 
-
-
-
- <!-- js dossier admin -->
- <script src="Garage Parrot/js/script.js"></script>
-
+<!-- js dossier admin -->
+<script src="Garage Parrot/js/script.js"></script>
 
 </body>
 </html>

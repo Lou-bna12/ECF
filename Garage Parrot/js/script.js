@@ -1,24 +1,59 @@
-let userBox = document.querySelector('.header .header-2 .user-box');
+$(function () {
+  let userBox = $('.header .header-2 .user-box');
+  let navbar = $('.header .header-2 .navbar');
 
-document.querySelector('#user-btn').onclick = () =>{
-   userBox.classList.toggle('active');
-   navbar.classList.remove('active');
-}
+  $('#user-btn').click(function () {
+    userBox.toggleClass('active');
+    navbar.removeClass('active');
+  });
 
-let navbar = document.querySelector('.header .header-2 .navbar');
+  $('#menu-btn').click(function () {
+    navbar.toggleClass('active');
+    userBox.removeClass('active');
+  });
 
-document.querySelector('#menu-btn').onclick = () =>{
-   navbar.classList.toggle('active');
-   userBox.classList.remove('active');
-}
+  function handleNavbarOnScroll() {
+    userBox.removeClass('active');
+    navbar.toggleClass('active', $(window).scrollTop() > 60);
+  }
 
-window.onscroll = () =>{
-   userBox.classList.remove('active');
-   navbar.classList.remove('active');
+  handleNavbarOnScroll();
 
-   if(window.scrollY > 60){
-      document.querySelector('.header .header-2').classList.add('active');
-   }else{
-      document.querySelector('.header .header-2').classList.remove('active');
-   }
-}
+  $(window).on('resize', function () {
+    if ($(window).width() > 768) {
+      navbar.removeClass('active');
+    }
+  });
+
+  $(window).on('scroll', handleNavbarOnScroll);
+
+  $('#appliquerFiltres').on('click', function () {
+    var prix = $('#prix').val();
+    var km = $('#km').val();
+    var annee = $('#annee').val();
+
+    $.post('home.php', { prix: prix, km: km, annee: annee }, function (data) {
+      $('.box-container').html(data);
+    });
+  });
+});
+
+$(document).ready(function () {
+  // ...
+
+  // Utiliser une seule fonction ready
+  $('#appliquerFiltres').on('click', function () {
+    var prix = $('#prix').val();
+    var km = $('#km').val();
+    var annee = $('#annee').val();
+
+    $.post(
+      'resultats.php',
+      { prix: prix, km: km, annee: annee },
+      function (data) {
+        // Mettez à jour la section des résultats filtrés avec les nouveaux résultats
+        $('.resultats-container').html(data);
+      }
+    );
+  });
+});

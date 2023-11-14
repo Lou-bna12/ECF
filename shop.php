@@ -4,10 +4,10 @@ include ('config.php');
 
 session_start();
 
-$user_id = $_SESSION['name'];
+$user_id = $_SESSION['user_id'];
 
 if(!isset($user_id)){
-  header('location:login.php');
+header('location:login.php');
 }
 if(isset($_POST['add_to_cart'])){
 
@@ -18,7 +18,8 @@ if(isset($_POST['add_to_cart'])){
    $product_annee = $_POST['product_annee'];
    $product_km = $_POST['product_km'];
 
-   $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart` WHERE  '$product_marque' AND user_id = '$user_id'") or die('query failed');
+   $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart` WHERE  '$product_marque' AND user_id = '$user_id'")
+   or die('query failed');
 
    if(mysqli_num_rows($check_cart_numbers) > 0){
       $message[] = 'Déjà ajouté au panier !';
@@ -26,11 +27,7 @@ if(isset($_POST['add_to_cart'])){
       mysqli_query($conn, "INSERT INTO `cart`(user_id, marque, prix, quantity, image, annee, km) VALUES('$user_id', '$product_marque',  '$product_prix', '$product_quantity', '$product_image', '$product_annee', '$product_km')") or die('query failed');
       $message[] = 'Produit ajouté au panier !';
    }
-
 }
-
-
-
 
 ?>
 
@@ -40,6 +37,9 @@ if(isset($_POST['add_to_cart'])){
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Nos véhicules</title>
+
+   <!--JQuery-->
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
       <!-- font awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -64,9 +64,9 @@ if(isset($_POST['add_to_cart'])){
 <h1 class="title">Reprise de véhicule</h1>
 
 
- <div class="box-container">
+<div class="box-container">
 
- <?php
+<?php
       $select_products = mysqli_query($conn, "SELECT * FROM automobiles") or die('query failed');
       if(mysqli_num_rows($select_products) > 0){
          while($fetch_products = mysqli_fetch_assoc($select_products)){
@@ -75,7 +75,7 @@ if(isset($_POST['add_to_cart'])){
 <img class="image" src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
 <div class="marque"><?php echo $fetch_products['marque']; ?></div>
 <div class="prix"><?php echo $fetch_products['prix']; ?> €</div>
-<input type="number" min="1" name="product_quantity"value="1" class="qty">
+<input type="number" min="1" max="200" name="product_quantity"value="1" class="qty">
 
 <div class="km"><?php echo $fetch_products['km']; ?> km</div>
 <div class="annee"><?php echo $fetch_products['annee']; ?></div>
@@ -86,8 +86,7 @@ if(isset($_POST['add_to_cart'])){
 <input type="hidden" name="product_annee" value="<?php echo $fetch_products['annee']; ?>">
 <input type="submit" value="Ajouter au panier" name="add_to_cart" class="btn">
 
-         </form>
-
+</form>
 <?php
 
 }
@@ -97,27 +96,15 @@ if(isset($_POST['add_to_cart'])){
 
 ?>
 
- </div>
+</div>
 
 </section>
 
 
-
-
-
-
-
-
-
-
-
 <?php include('footer.php')?>
 
-
-
-
- <!-- js dossier admin -->
- <script src="Garage Parrot/js/script.js"></script>
+<!-- js dossier admin -->
+<script src="Garage Parrot/js/script.js"></script>
 
 
 </body>

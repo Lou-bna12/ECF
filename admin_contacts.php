@@ -2,29 +2,32 @@
 
 include('config.php');
 
-    session_start();
+   session_start();
 
-    $admin_id = $_SESSION['name'];
+   $admin_id = $_SESSION['admin_id'];
 
-    if(!isset($admin_id)){
-        header("Location:login.php");
-    };
-    if(isset($_GET['delete'])){
+   if(!isset($admin_id)){
+      header("Location:login.php");
+   };
+   if(isset($_GET['delete'])){
       $delete_id = $_GET['delete'];
       mysqli_query($conn, "DELETE FROM `message` WHERE id = '$delete_id'") or die('query failed');
       header('location:admin_contacts.php');
-   }
+}
 
 
 ?>
 <!DOCTYPE html>
 <html lang="fr_FR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-     <title>Messages </title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   <title>Messages </title>
 
-    <!-- font awesome -->
+   <!--JQuery-->
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+   <!-- font awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
    
       <!--  css dossier admin -->
@@ -45,7 +48,7 @@ include('config.php');
          while($fetch_message = mysqli_fetch_assoc($select_message)){
       
    ?>
-    <div class="box">
+   <div class="box">
       <p> Identifiant : <span><?php echo $fetch_message['user_id']; ?></span> </p>
       <p> Nom et prénom : <span><?php echo $fetch_message['name']; ?></span> </p>
       <p> Numéro de téléphone : <span><?php echo $fetch_message['number']; ?></span> </p>

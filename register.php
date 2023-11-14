@@ -1,39 +1,31 @@
 <?php
 
-include('config.php');
+include 'config.php';
 
 if(isset($_POST['submit'])){
-   $name = $_POST['name'];
-   $email = $_POST['email'];
-   $password = $_POST['password'];
-   $cpassword = $_POST['cpassword'];
+
+   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
+   $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
    $user_type = $_POST['user_type'];
 
-   if($password == $cpassword){
-      $sql = "SELECT * FROM `users` WHERE email='$email'";
-      $result = mysqli_query($conn, $sql);
-      if(!$result->num_rows > 0){
-         $sql = "INSERT INTO `users` (name, email, password, user_type)
-         VALUES ('$name', '$email', '$password', '$user_type')";
-         $result = mysqli_query($conn, $sql);
-         if($result){
-            echo "<script>alert(' Utilisateur enregistré avec succès.')</script>";
-            $name = "";
-            $email = "";
-            $_POST['password'] = "";
-            $_POST['cpassword'] = "";
-            $user_type = "";
-         }else{
-            echo "<script>alert('Woops! Quelque chose s'est mal passé.')</script>";
-         }
-      }else{
-         echo "<script>alert('Woops! Email déjà existant.')</script>";
-      }
+   $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email' AND password = '$pass'")
+   or die('query failed');
+   $select_users = mysqli_query($conn, "SELECT * FROM `client` WHERE email = '$email' AND password = '$pass'")
+   or die('query failed');
 
-      
+   if(mysqli_num_rows($select_users) > 0){
+      $message[] = 'L\'utilisateur existe déjà !';
    }else{
-      echo "<script>alert('Mot de passe ne correspond pas.')</script>";
-      header("Location: login.php");
+      if($pass != $cpass){
+         $message[] = 'Confirmer le mot de passe ne correspond pas !';
+      }else{
+         mysqli_query($conn, "INSERT INTO `users`(name, email, password, user_type)
+         VALUES('$name', '$email', '$cpass', '$user_type')") or die('query failed');
+         $message[] = 'Inscrit avec succès !';
+         header('location:login.php');
+      }
    }
 
 }
@@ -43,21 +35,23 @@ if(isset($_POST['submit'])){
 <!DOCTYPE html>
 <html lang="fr_FR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enregistrer</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>S'inscrire</title>
 
-    <!-- font awesome -->
+   <!--JQuery-->
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+   <!-- font awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-    <!--  css dossier -->
+   <!--  css dossier -->
 
 <link rel="stylesheet" href="Garage Parrot/css/style.css">
 
    </head>
 <body>
 
-<?php include('header.php'); ?>
 
 <?php
 if(isset($message)){
@@ -81,8 +75,9 @@ if(isset($message)){
    <input type="password" name="password" placeholder="Entrer votre mot de passe" required class="box">
    <input type="password" name="cpassword" placeholder="confirmer votre mot de passe" required class="box">
    <select name="user_type" class="box">
-      <option value="Employé">Employé</option>
-      <option value="Admin">Admin</option>
+      <option value="employé">Employé</option>
+      <option value="employé">Client</option>
+      <option value="admin">Admin</option>
    </select>
    <input type="submit" name="submit" value="Connexion" class="btn">
    <p>Vous avez déja un compte?<a href="login.php"> Connectez-vous</a></p>
