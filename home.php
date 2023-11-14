@@ -86,14 +86,15 @@ $annee = isset($_SESSION['filters']['annee']) ? $_SESSION['filters']['annee'] : 
 <form id="filter-form"  method="POST">
    <label for="prix">Fourchette de prix :</label>
    <input type="range" id="prix" name="prix" min="0" max="100000" step="1000">
-   <span id="price-value">0 €</span>
+   <span id="price-value">10 000€ - 50 000€</span>
 
    <label for="km">Distance parcourue (km) :</label>
    <input type="range" id="km" name="km" min="0" max="200000" step="5000">
-   <span id="km-value">0 km</span>
+   <span id="km-value">177220km - 6547896547km </span>
 
    <label for="annee">Année de mise en circulation :</label>
    <input type="range" id="annee" name="annee" min="1990" max="2023" step="1">
+   <span id="annee-value">2010 - 2020 </span>
  
 
    <input type="submit" value="Filtrer" class="btn" id="filter-btn">

@@ -520,19 +520,20 @@ section {
 
 #filter-form label {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-weight: bold;
   font-size: 20px;
 }
 
 #filter-form input[type='range'] {
   width: 100%;
-  color: #333;
+  margin-bottom: 10px;
 }
 
 #filter-form span {
   display: inline-block;
   margin-left: 10px;
+  margin-bottom: 10px;
   font-size: 15px;
   font-weight: bold;
 }
