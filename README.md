@@ -32,9 +32,8 @@ Formulaire de Contact : Possibilité pour les visiteurs de contacter le garage p
 - Ouvrez les fichiers HTML dans un navigateur web.
 
 ## Captures  d'Écran
-![Accueil]( Garage Parrot/ images
-/accueil-bg.jpg
-)
+![Accueil](Garage Parrot/images/home-bg.jpg)
+
 
 ## Version :
 - MariaDB(version 10.11) 
