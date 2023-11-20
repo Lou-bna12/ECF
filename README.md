@@ -17,23 +17,24 @@ Formulaire de Contact : Possibilité pour les visiteurs de contacter le garage p
 - Back-End: PHP, MYSQL pour la gestion de la base de données. 
 
 ### Structure du Projet
-index.html : Page d'accueil du site.
-services.html : Détails des services offerts par le garage.
-Vehicles.html : Liste des véhicules d'occasion disponibles.
-contact.html : Formulaire de contact.
-assets/ : Dossier contenant les fichiers CSS, JavaScript et les images.
+- index.php : Page d'accueil du site.
+- about.php : Détails des services offerts par le garage.
+- home.php : Liste des véhicules d'occasion disponibles.
+- contact.php : Formulaire de contact.
+- Dossier CSS contenant les fichiers admin_style.css, et style.css
+- Dossiers JS contenant les fichiers :
+- admin_script.js
+- script.js
+- filter.js
 
-## Démarage : 
-Pour lancer le projet : 
-- Créer la base de donnée 
-- Créer une page de connexion qui relie la base de données avec les autres pages créés par la suite.
-  En premier je vais commencer à créer le compte administrateur et employeur.
+## Installation 
+- Clonez  le dépôt : `https://github.com/Lou-bna12/ECF.git`
+- Ouvrez les fichiers HTML dans un navigateur web.
 
-## Fabriqué avec : 
-- Visuel Studio Code. (pour mes pages)
-- PhpMyAdmin (Création de la base de donnée) 
-- [Materialize.css](http://materializecss.com) - Framework CSS (front-end) 
-
+## Captures  d'Écran
+![Accueil]( Garage Parrot/ images
+/accueil-bg.jpg
+)
 
 ## Version :
 - MariaDB(version 10.11) 
