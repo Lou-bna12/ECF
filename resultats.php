@@ -41,7 +41,7 @@ if ($result) {
    mysqli_free_result($result);
 } else {
     // Gérez l'erreur de la requête
-    echo 'Erreur dans la requête : ' . mysqli_error($conn);
+   echo 'Erreur dans la requête : ' . mysqli_error($conn);
 }
 
 ?>
