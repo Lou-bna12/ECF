@@ -3,42 +3,25 @@
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
 ## Description du projet : 
+Ce site web représente le Garage Automobile V. Parrot, un établissement spécialisé dans la réparation, l'entretien et la vente de véhicules d'occasion à Toulouse. Le site vise à présenter les services offerts par le garage et à fournir des informations utiles aux clients potentiels.
 
-Vincent Parrot, a ouvert son propre garage, il propose ses services à ses clients :
-
-- Réparation de la carrosserie.
-* Mécanique des voitures.
-* Entretien régulier pour garantir la performance et la sécurité des voitures.
-* Vente des véhicules d'occasion.
-  
-Vincent Parrot pense que son garage est un endroit où ses clients peuvent se sentir confiants et qu'ils doivent être entre de bonnes mains. Il a donc pris la décision de contacter une agence afin de lui créer un site web pour son garage.
 
 ### Fonctionnalités désirées par Vincent Perrot: 
-De créer un compte administrateur sera créé pour le chef d'entreprise du garage, et un autre compte pour ses employés.
--Présenter les services
-* Définir les horaires d'ouverture dans le pied de page
-* Exposer les voitures d'occasion pour chaque voiture, il faudra : 
-      + Prix 
-      + Photo 
-      + Année 
-      + kilométrage 
-  
-- Filtrer la liste des voitures d'occasion 
-* Permettre de contacter l'atelier (un formulaire qui contient le nom, prénom, adresse e-mail, et numéro de téléphone)
-
-Et en dernier recueillir les témoignages des clients.
+Présentation des Services : Pages détaillées sur les services de réparation, d'entretien et de vente.
+Galerie de Véhicules : Affichage des véhicules d'occasion disponibles à la vente avec des détails et des images.
+Formulaire de Contact : Possibilité pour les visiteurs de contacter le garage pour des demandes ou des questions.
 
 
-# Les prérequis : 
-- HTML, CSS, et JS . 
-- PHP, MYSQL. 
+# Technologies Utilisées : 
+- Front-End: HTML, CSS, et JavaScript . 
+- Back-End: PHP, MYSQL pour la gestion de la base de données. 
 
-### Instalation : 
-Comme je travaille en mode local.
-- Je commence à installer XAMMP.
-* Créer un dossier dans HTDOCS.
-* J'active dans XAMPP Control Panel Apache, et MySQL. 
-* J'ouvre mon éditeur de texte Visuel Studio Code. 
+### Structure du Projet
+index.html : Page d'accueil du site.
+services.html : Détails des services offerts par le garage.
+Vehicles.html : Liste des véhicules d'occasion disponibles.
+contact.html : Formulaire de contact.
+assets/ : Dossier contenant les fichiers CSS, JavaScript et les images.
 
 ## Démarage : 
 Pour lancer le projet : 
