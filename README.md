@@ -32,8 +32,7 @@ Formulaire de Contact : Possibilité pour les visiteurs de contacter le garage p
 - Ouvrez les fichiers HTML dans un navigateur web.
 
 ## Captures  d'Écran
-![Accueil]
-Garage Parrot/images/home-bg.jpg
+https://github.com/Lou-bna12/ECF/blob/main/Garage%20Parrot/images/home-bg.jpg
 
 
 ## Version :
