@@ -33,7 +33,7 @@ Formulaire de Contact : Possibilité pour les visiteurs de contacter le garage p
 
 ## Captures  d'Écran
 ![Accueil]
--(ECF/Garage Parrot/images/home-bg.jpg)
+Garage Parrot/images/home-bg.jpg
 
 
 ## Version :
